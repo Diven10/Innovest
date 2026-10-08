@@ -2931,3 +2931,21 @@ button.diven-action-button {
       14px !important;
   }
 }
+
+@media (max-width: 900px) {
+  .hero-head {
+    font-size: 8.5vw !important;
+    white-space: nowrap !important;
+    line-height: 1.1 !important;
+  }
+  .hero-top-row {
+    gap: 2vh !important;
+    margin-top: 10vh !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero-head {
+    font-size: 8.2vw !important;
+  }
+}
