@@ -1,0 +1,16 @@
+#root {
+  min-height: 100vh;
+}
+
+/* Integration helpers */
+.diven-action-button {
+  font: inherit;
+  border: 0;
+  cursor: pointer !important;
+}
+.track-card-clickable {
+  cursor: pointer !important;
+}
+.application-form-anchor {
+  display: none;
+}

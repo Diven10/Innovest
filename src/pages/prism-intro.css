@@ -1,0 +1,202 @@
+/* ======================================================
+   PRISM INTRO — WebGL crystal overlay
+   src/pages/prism-intro.css
+   ====================================================== */
+
+/* ---- Overlay container (reuses #rocket-intro fade-out mechanism) ---- */
+#rocket-intro {
+  position: fixed;
+  inset: 0;
+  height: 100vh;
+  height: 100dvh;
+  z-index: 9999;
+  background: #000;
+  overflow: hidden;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
+
+#rocket-intro.fade-out {
+  opacity: 0;
+  transform: translateY(-40px);
+  pointer-events: none;
+}
+
+/* ---- WebGL canvas fills the entire overlay ---- */
+#prism-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ---- Centered content overlay ---- */
+.prism-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  text-align: center;
+  color: #fff;
+  pointer-events: none;
+  width: 95%;
+  max-width: 1100px;
+}
+
+/* ---- Title ---- */
+.prism-title {
+  position: relative;
+  font-family: 'Google Sans', 'Product Sans', -apple-system, BlinkMacSystemFont,
+               'Segoe UI', Roboto, sans-serif;
+  font-size: clamp(2.6rem, 9.5vw, 6.5rem);
+  font-weight: 900;
+  white-space: nowrap;
+  margin: 0 0 0.25em;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  background: linear-gradient(135deg, #fff 0%, #e0e0ff 50%, #fff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.4))
+          drop-shadow(0 0 80px rgba(138, 43, 226, 0.3));
+  animation: prismGlow 3s ease-in-out infinite alternate;
+}
+
+.prism-title::after {
+  content: "GDG VITM";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #4285F4 0%, #EA4335 33%, #FBBC04 66%, #34A853 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: var(--pulse, 0);
+  transition: opacity 0.1s linear;
+}
+
+@keyframes prismGlow {
+  from {
+    filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.4))
+            drop-shadow(0 0 80px rgba(138, 43, 226, 0.3));
+  }
+  to {
+    filter: drop-shadow(0 0 60px rgba(255, 255, 255, 0.65))
+            drop-shadow(0 0 120px rgba(0, 191, 255, 0.45));
+  }
+}
+
+/* ---- Tagline ---- */
+.prism-tagline {
+  font-family: 'Google Sans', 'Product Sans', -apple-system, BlinkMacSystemFont,
+               'Segoe UI', Roboto, sans-serif;
+  font-size: clamp(0.7rem, 2.2vw, 1.1rem);
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  margin: 0 0 2.5em;
+  text-shadow:
+    0 0 30px rgba(255, 255, 255, 0.4),
+    0 0 60px rgba(138, 43, 226, 0.25);
+  filter: invert(var(--pulse, 0));
+}
+
+/* ---- Mobile & Tablet breakpoints ---- */
+@media (max-width: 768px) {
+  .prism-title {
+    font-size: clamp(2.4rem, 11vw, 4.5rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .prism-title {
+    font-size: clamp(2.2rem, 13vw, 3.8rem);
+    letter-spacing: -0.02em;
+  }
+
+  .prism-tagline {
+    font-size: clamp(0.55rem, 3vw, 0.8rem);
+    letter-spacing: 0.15em;
+    margin-bottom: 2em;
+  }
+}
+
+@media (max-width: 360px) {
+  .prism-title { font-size: clamp(1.8rem, 12vw, 3rem); }
+}
+
+/* ---- Landscape phone ---- */
+@media (max-height: 500px) and (orientation: landscape) {
+  .prism-title {
+    font-size: clamp(1.8rem, 8vw, 3.5rem);
+    margin-bottom: 0.15em;
+  }
+
+  .prism-tagline {
+    font-size: 0.65rem;
+    margin-bottom: 1.2em;
+    letter-spacing: 0.12em;
+  }
+}
+
+/* ---- Skip Button ---- */
+.prism-skip-btn {
+  position: absolute;
+  bottom: 2.2rem;
+  right: 2.5rem;
+  z-index: 20;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.85);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  padding: 0.55rem 1.6rem;
+  border-radius: 9999px;
+  font-family: 'Google Sans', 'Product Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  outline: none;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prism-skip-btn:hover {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+.prism-skip-btn:active,
+.prism-skip-btn.clicked {
+  background: #EA4335 !important;
+  color: #ffffff !important;
+  border-color: #EA4335 !important;
+  box-shadow: 0 0 25px rgba(234, 67, 53, 0.65);
+  transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+  .prism-skip-btn {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    padding: 0.45rem 1.25rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+  }
+}
+
