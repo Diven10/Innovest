@@ -2389,29 +2389,20 @@ button.diven-action-button {
      ======================================================= */
 
   .hero-bottom-row {
-    position:
-      relative;
-
-    z-index:
-      10;
-
-    width:
-      100%;
-
-    display:
-      flex !important;
-
-    flex-direction:
-      column;
-
-    gap:
-      32px;
-
-    margin:
-      42px 0 0 !important;
-
-    padding:
-      0 !important;
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    display: flex !important;
+    flex-direction: column;
+    gap: 32px;
+    margin: 42px 0 0 !important;
+    padding: 24px !important;
+    background: rgba(238, 240, 235, 0.85) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08) !important;
+    box-sizing: border-box !important;
   }
 
   .hero-about {
