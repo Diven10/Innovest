@@ -425,7 +425,7 @@ export default function Index() {
           </div>
 
           <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: "24px" }}>
-            <h1 className="hero-head row2" style={{ margin: 0, lineHeight: 0.8 }}>
+            <h1 className="hero-head row2" style={{ margin: 0, lineHeight: 1 }}>
               INVESTMENT
             </h1>
 
