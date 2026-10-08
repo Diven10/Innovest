@@ -392,12 +392,16 @@ export default function Index() {
             pointerEvents: "none"
           }}
         >
-          <img src="/shark-cash.jpg" alt="Shark Fin and Cash" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'bottom', filter: 'contrast(1.15) saturate(1.2) brightness(1.05)', transform: 'translateZ(0)' }} />
+          <picture>
+            <source media="(max-width: 900px)" srcSet="/shark-cash-mobile.jpg" />
+            <source media="(orientation: portrait)" srcSet="/shark-cash-mobile.jpg" />
+            <img src="/shark-cash.jpg" alt="Shark Fin and Cash" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'bottom', filter: 'contrast(1.15) saturate(1.2) brightness(1.05)', transform: 'translateZ(0)' }} />
+          </picture>
           {/* Gradient overlay to ensure text readability at the top and bottom */}
           <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(to bottom, var(--stone) 0%, transparent 30%, transparent 60%, var(--stone) 95%)' }} />
         </div>
 
-        <div className="hero-top-row" style={{ position: "relative", zIndex: 10, display: "flex", flexDirection: "column", gap: "24px" }}>
+        <div className="hero-top-row" style={{ position: "relative", zIndex: 10, display: "flex", flexDirection: "column", gap: "6vh" }}>
           <h1 className="hero-head" style={{ margin: 0, whiteSpace: "nowrap" }}>
             INNOVATION &times;
           </h1>
@@ -424,7 +428,7 @@ export default function Index() {
             </p>
           </div>
 
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: "24px" }}>
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: "6vh" }}>
             <h1 className="hero-head row2" style={{ margin: 0, lineHeight: 1 }}>
               INVESTMENT
             </h1>
