@@ -9,6 +9,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gdgLogo from "../assets/gdg-logo2.png";
 
 import { ApplicationForm } from "../components/ApplicationForm";
+import { GOOGLE_FORM_URL } from "../lib/constants";
 
 
 
@@ -359,7 +360,7 @@ export default function Index() {
               <button
                 type="button"
                 className="nav-cta diven-action-button"
-                onClick={() => window.open("#", "_blank")}
+                onClick={() => window.open(GOOGLE_FORM_URL, "_blank", "noopener,noreferrer")}
               >
                 Apply
               </button>
@@ -616,7 +617,7 @@ export default function Index() {
               <button
                 type="button"
                 className="m-submit diven-action-button"
-                onClick={() => window.open("#", "_blank")}
+                onClick={() => window.open(GOOGLE_FORM_URL, "_blank", "noopener,noreferrer")}
               >
                 Register Now →
               </button>
@@ -645,7 +646,7 @@ export default function Index() {
             <button
               type="button"
               className="apply-btn diven-action-button"
-              onClick={() => window.open("#", "_blank")}
+              onClick={() => window.open(GOOGLE_FORM_URL, "_blank", "noopener,noreferrer")}
             >
               Apply now →
             </button>

@@ -1,3 +1,5 @@
+export const GOOGLE_FORM_URL = "https://forms.gle/icEthKj2UDo4BKvK8";
+
 // GDG Recruitment Available Positions
 export const AVAILABLE_POSITIONS = [
   "Technical Team",
