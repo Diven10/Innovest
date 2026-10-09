@@ -290,7 +290,7 @@ export default function Index() {
       if (jaggedColumn < 4) {
         blockColor = "#eef0eb"; // Light Stone
       } else if (jaggedColumn < 8) {
-        blockColor = "#1f3027"; // Dark Ink
+        blockColor = "rgba(197, 210, 197, 0.8)"; // Muted Sage Green
       } else if (jaggedColumn < 12) {
         blockColor = "#7c8780"; // Grey Green
       } else {
